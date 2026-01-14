@@ -1,7 +1,5 @@
 package frc.robot.indexer
 
-import com.ctre.phoenix.motorcontrol.can.TalonSRX
-import com.ctre.phoenix.motorcontrol.can.TalonSRXConfiguration
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX
 import com.revrobotics.spark.SparkLowLevel
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -12,7 +10,7 @@ import frc.robot.IndexerConstants
 object Indexer : SubsystemBase() {
 
     private val flywheelMotor = SparkMax(IndexerConstants.FLYWHEEL_MOTOR_ID, SparkLowLevel.MotorType.kBrushless)
-    private val intakeMotor = WPI_TalonSRX(IndexerConstants.INTAKE_MOTOR_ID)
+    private val intakeMotor = WPI_TalonSRX(IndexerConstants.ROLLER_MOTOR_ID)
 
     private val flywheelMotorConfig = SparkMaxConfig()
 
@@ -20,7 +18,7 @@ object Indexer : SubsystemBase() {
         flywheelMotorConfig.inverted(IndexerConstants.FLYWHEEL_MOTOR_INVERTED)
         flywheelMotorConfig.smartCurrentLimit(IndexerConstants.FLYWHEEL_MOTOR_CURRENT_LIMIT)
 
-        intakeMotor.inverted = IndexerConstants.INTAKE_MOTOR_INVERTED
+        intakeMotor.inverted = IndexerConstants.ROLLER_MOTOR_INVERTED
         intakeMotor.enableCurrentLimit(true)
     }
 

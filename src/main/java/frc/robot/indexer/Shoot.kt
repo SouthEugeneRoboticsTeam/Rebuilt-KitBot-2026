@@ -6,7 +6,11 @@ class Shoot : Command() {
 
     init { addRequirements(Indexer) }
 
-    override fun initialize() {}
+    override fun initialize() {
+
+        Indexer.
+
+    }
 
     override fun execute() {}
 

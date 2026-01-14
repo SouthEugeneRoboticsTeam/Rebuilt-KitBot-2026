@@ -23,13 +23,13 @@ object GeneralConstants {
 object IndexerConstants {
 
     const val FLYWHEEL_MOTOR_ID = -1
-    const val INTAKE_MOTOR_ID = -1
+    const val ROLLER_MOTOR_ID = -1
 
     const val FLYWHEEL_MOTOR_INVERTED = false
-    const val INTAKE_MOTOR_INVERTED = false
+    const val ROLLER_MOTOR_INVERTED = false
 
     const val FLYWHEEL_MOTOR_CURRENT_LIMIT = 30
-    const val INTAKE_MOTOR_CURRENT_LIMIT = 30
+    const val ROLLER_MOTOR_CURRENT_LIMIT = 30
 
     const val FLYWHEEL_P = 0.0
     const val FLYWHEEL_I = 0.0
@@ -38,6 +38,10 @@ object IndexerConstants {
     const val FLYWHEEL_KS = 0.0
     const val FLYWHEEL_KV = 0.0
     const val FLYWHEEL_KA = 0.0
+
+    const val INTAKING_INTAKE_VOLTAGE: Double = 10.0
+    const val ROLLER_OUTTAKE_VOLTAGE: Double = -12.0
+    const val LAUNCHING_FEEDER_VOLTAGE: Double = 9.0
 
 }
 
