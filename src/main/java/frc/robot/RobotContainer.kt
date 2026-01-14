@@ -2,7 +2,6 @@ package frc.robot
 
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController
 import edu.wpi.first.wpilibj2.command.button.Trigger
-import frc.robot.Constants.OperatorConstants
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -18,7 +17,7 @@ import frc.robot.Constants.OperatorConstants
 object RobotContainer
 {
     // Replace with CommandPS4Controller or CommandJoystick if needed
-    private val driverController = CommandXboxController(OperatorConstants.DRIVER_CONTROLLER_PORT)
+    private val driverController = CommandXboxController(GeneralConstants.CONTROLLER_PORT)
         
     init
     {

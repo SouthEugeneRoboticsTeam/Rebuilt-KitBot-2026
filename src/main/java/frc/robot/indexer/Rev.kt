@@ -1,25 +1,27 @@
 package frc.robot.indexer
 
+import edu.wpi.first.math.controller.PIDController
+import edu.wpi.first.math.controller.SimpleMotorFeedforward
 import edu.wpi.first.wpilibj2.command.Command
+import frc.robot.IndexerConstants
 import frc.robot.indexer.Indexer
 
-class Rev : Command() {
-    private val indexer = Indexer
+class Rev(private val rpm: Double) : Command() {
 
+    private val pid = PIDController(IndexerConstants.FLYWHEEL_P, IndexerConstants.FLYWHEEL_I, IndexerConstants.FLYWHEEL_D)
+    private val feedForward = SimpleMotorFeedforward(IndexerConstants.FLYWHEEL_KS, IndexerConstants.FLYWHEEL_KV, IndexerConstants.FLYWHEEL_KA)
 
-    init {
-        // each subsystem used by the command must be passed into the addRequirements() method
-        addRequirements(indexer)
-    }
+    init { addRequirements(Indexer) }
 
     override fun initialize() {}
 
-    override fun execute() {}
-
-    override fun isFinished(): Boolean {
-        // TODO: Make this return true when this Command no longer needs to run execute()
-        return false
+    override fun execute() {
+        Indexer.setFlywheel(pid.calculate(Indexer.getFlywheelRPM(), rpm) + feedForward.calculate(rpm))
     }
 
-    override fun end(interrupted: Boolean) {}
+    override fun isFinished(): Boolean { return false }
+
+    override fun end(interrupted: Boolean) {
+        Indexer.stopFlywheel()
+    }
 }

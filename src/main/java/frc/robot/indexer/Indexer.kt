@@ -26,6 +26,8 @@ object Indexer : SubsystemBase() {
 
     fun setFlywheel(voltage: Double) { flywheelMotor.setVoltage(voltage) }
 
+    fun getFlywheelRPM(): Double { return flywheelMotor.encoder.velocity }
+
     fun setIntake(speed: Double) { intakeMotor.set(speed) }
 
     fun stopFlywheel(){ flywheelMotor.stopMotor() }

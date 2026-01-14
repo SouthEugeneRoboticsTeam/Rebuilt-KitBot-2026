@@ -3,12 +3,8 @@ package frc.robot.indexer
 import edu.wpi.first.wpilibj2.command.Command
 
 class Shoot : Command() {
-    private val indexer = Indexer
 
-    init {
-        // each subsystem used by the command must be passed into the addRequirements() method
-        addRequirements(indexer)
-    }
+    init { addRequirements(Indexer) }
 
     override fun initialize() {}
 
