@@ -9,11 +9,12 @@ package frc.robot
 
 object GeneralConstants {
 
-    val driveSpeed = 1.0 // idk
-    val turnSpeed = 0.8 // idk
+    var driveSpeed = 1.0 // idk
+    var turnSpeed = 0.8 // idk
 
     var flywheelShootSpeed = 2000.0 //Guess
     var flywheelIdleSpeed = 0.0 // Idle at 0 unless it is better to keep idled?
+    var flywheelReverseSpeed = -500.0
 
     const val CONTROLLER_PORT = 0
 
@@ -39,9 +40,9 @@ object IndexerConstants {
     const val FLYWHEEL_KV = 0.0
     const val FLYWHEEL_KA = 0.0
 
-    const val INTAKING_INTAKE_VOLTAGE: Double = 10.0
+    const val ROLLER_INTAKE_VOLTAGE: Double = 10.0
     const val ROLLER_OUTTAKE_VOLTAGE: Double = -12.0
-    const val LAUNCHING_FEEDER_VOLTAGE: Double = 9.0
+    const val ROLLER_SHOOT_VOLTAGE: Double = 9.0
 
 }
 

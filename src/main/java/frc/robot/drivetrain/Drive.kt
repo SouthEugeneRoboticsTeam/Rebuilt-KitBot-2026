@@ -9,11 +9,13 @@ class Drive : Command() {
 
     init { addRequirements(Drivetrain) }
 
-    override fun initialize() {}
-
-    override fun execute() { Drivetrain.drivetrain.arcadeDrive(Input.leftStickY(), Input.rightStickX()) }
+    override fun execute() {
+        Drivetrain.drivetrain.arcadeDrive(Input.leftStickY(), Input.rightStickX())
+    }
 
     override fun isFinished(): Boolean { return false }
 
-    override fun end(interrupted: Boolean) { Drivetrain.stopMotors() }
+    override fun end(interrupted: Boolean) {
+        Drivetrain.stopMotors()
+    }
 }

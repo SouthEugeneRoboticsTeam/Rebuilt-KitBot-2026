@@ -13,8 +13,6 @@ class Rev(private val rpm: Double) : Command() {
 
     init { addRequirements(Indexer) }
 
-    override fun initialize() {}
-
     override fun execute() {
         Indexer.setFlywheel(pid.calculate(Indexer.getFlywheelRPM(), rpm) + feedForward.calculate(rpm))
     }

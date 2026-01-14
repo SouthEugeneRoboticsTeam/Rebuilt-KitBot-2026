@@ -10,7 +10,7 @@ import frc.robot.IndexerConstants
 object Indexer : SubsystemBase() {
 
     private val flywheelMotor = SparkMax(IndexerConstants.FLYWHEEL_MOTOR_ID, SparkLowLevel.MotorType.kBrushless)
-    private val intakeMotor = WPI_TalonSRX(IndexerConstants.ROLLER_MOTOR_ID)
+    private val rollerMotor = WPI_TalonSRX(IndexerConstants.ROLLER_MOTOR_ID)
 
     private val flywheelMotorConfig = SparkMaxConfig()
 
@@ -18,18 +18,18 @@ object Indexer : SubsystemBase() {
         flywheelMotorConfig.inverted(IndexerConstants.FLYWHEEL_MOTOR_INVERTED)
         flywheelMotorConfig.smartCurrentLimit(IndexerConstants.FLYWHEEL_MOTOR_CURRENT_LIMIT)
 
-        intakeMotor.inverted = IndexerConstants.ROLLER_MOTOR_INVERTED
-        intakeMotor.enableCurrentLimit(true)
+        rollerMotor.inverted = IndexerConstants.ROLLER_MOTOR_INVERTED
+        rollerMotor.enableCurrentLimit(true)
     }
 
     fun setFlywheel(voltage: Double) { flywheelMotor.setVoltage(voltage) }
 
     fun getFlywheelRPM(): Double { return flywheelMotor.encoder.velocity }
 
-    fun setIntake(speed: Double) { intakeMotor.set(speed) }
+    fun setRollerVoltage(voltage: Double) { rollerMotor.setVoltage(voltage) }
 
     fun stopFlywheel(){ flywheelMotor.stopMotor() }
 
-    fun stopIntake(){ intakeMotor.stopMotor() }
+    fun stopRoller(){ rollerMotor.stopMotor() }
 
 }
