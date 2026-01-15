@@ -1,9 +1,7 @@
 package frc.robot.drivetrain
 
-import edu.wpi.first.wpilibj.drive.DifferentialDrive
 import edu.wpi.first.wpilibj2.command.Command
 import frc.robot.Input
-import frc.robot.drivetrain.Drivetrain
 
 class Drive : Command() {
 

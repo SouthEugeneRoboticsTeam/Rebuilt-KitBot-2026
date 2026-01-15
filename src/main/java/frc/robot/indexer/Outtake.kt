@@ -3,7 +3,6 @@ package frc.robot.indexer
 import edu.wpi.first.wpilibj2.command.Command
 import frc.robot.GeneralConstants
 import frc.robot.IndexerConstants
-import frc.robot.indexer.Indexer
 
 class Outtake : Command() {
 

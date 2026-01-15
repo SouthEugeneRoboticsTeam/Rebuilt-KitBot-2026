@@ -4,7 +4,6 @@ import edu.wpi.first.math.controller.PIDController
 import edu.wpi.first.math.controller.SimpleMotorFeedforward
 import edu.wpi.first.wpilibj2.command.Command
 import frc.robot.IndexerConstants
-import frc.robot.indexer.Indexer
 
 class Rev(private val rpm: Double) : Command() {
 

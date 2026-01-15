@@ -8,7 +8,6 @@ import frc.robot.indexer.Shoot
 
 object Input {
     private val controller = CommandXboxController(GeneralConstants.CONTROLLER_PORT)
-    private val deadzone = 0.1
 
     private val intake = controller.a()
     private val rev = controller.leftBumper()

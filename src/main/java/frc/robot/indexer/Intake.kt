@@ -2,7 +2,6 @@ package frc.robot.indexer
 
 import edu.wpi.first.wpilibj2.command.Command
 import frc.robot.IndexerConstants
-import frc.robot.indexer.Indexer
 
 class Intake : Command() {
 
