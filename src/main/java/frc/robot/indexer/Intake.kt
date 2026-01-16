@@ -8,12 +8,12 @@ class Intake : Command() {
     init { addRequirements(Indexer) }
 
     override fun initialize() {
-        Indexer.setRollerVoltage(IndexerConstants.ROLLER_INTAKE_VOLTAGE)
+        Indexer.setFlintakeVoltage(IndexerConstants.FLINTAKE_INTAKE_VOLTAGE)
     }
 
     override fun isFinished(): Boolean { return false }
 
     override fun end(interrupted: Boolean) {
-        Indexer.stopRoller()
+        Indexer.stopFlintake()
     }
 }

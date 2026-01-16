@@ -16,27 +16,29 @@ object GeneralConstants {
 
 object IndexerConstants {
 
-    const val FLYWHEEL_MOTOR_ID = -1
-    const val ROLLER_MOTOR_ID = -1
+    const val FLINTAKE_MOTOR_ID = -1
+    const val FEEDER_MOTOR_ID = -1
 
-    const val FLYWHEEL_MOTOR_INVERTED = false
-    const val ROLLER_MOTOR_INVERTED = false
+    const val FLYWHEEL_GEAR_RATIO = 2.0 // This is if the flywheel spins twice as past as the motor
 
-    const val FLYWHEEL_MOTOR_CURRENT_LIMIT = 30
-    const val ROLLER_MOTOR_CURRENT_LIMIT = 30
+    const val FLINTAKE_MOTOR_INVERTED = false
+    const val FEEDER_MOTOR_INVERTED = false
 
-    const val FLYWHEEL_P = 0.0
-    const val FLYWHEEL_I = 0.0
-    const val FLYWHEEL_D = 0.0
+    const val FLINTAKE_MOTOR_CURRENT_LIMIT = 30
+    const val FEEDER_MOTOR_CURRENT_LIMIT = 30
 
-    const val FLYWHEEL_KS = 0.0
-    const val FLYWHEEL_KV = 0.0
-    const val FLYWHEEL_KA = 0.0
+    const val FLINTAKE_P = 0.0
+    const val FLINTAKE_I = 0.0
+    const val FLINTAKE_D = 0.0
 
-    const val ROLLER_INTAKE_VOLTAGE: Double = 10.0
-    const val ROLLER_OUTTAKE_VOLTAGE: Double = -12.0
-    const val ROLLER_SHOOT_VOLTAGE: Double = 9.0
+    const val FLINTAKE_KS = 0.0
+    const val FLINTAKE_KV = 0.0
+    const val FLINTAKE_KA = 0.0
 
+    const val FLINTAKE_INTAKE_VOLTAGE = 10.0
+    const val FLINTAKE_OUTTAKE_VOLTAGE = -12.0
+
+    const val FEEDER_SHOOT_VOLTAGE = 9.0
 }
 
 object DrivetrainConstants {

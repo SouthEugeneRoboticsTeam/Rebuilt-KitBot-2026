@@ -3,7 +3,7 @@ package frc.robot
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController
 import frc.robot.indexer.Intake
 import frc.robot.indexer.Outtake
-import frc.robot.indexer.Rev
+import frc.robot.indexer.SetFlywheel
 import frc.robot.indexer.Shoot
 
 object Input {
@@ -16,12 +16,12 @@ object Input {
 
     init {
 
-        Rev(GeneralConstants.flywheelIdleSpeed)
+        SetFlywheel(GeneralConstants.flywheelIdleSpeed)
 
         intake.whileTrue(Intake())
 
-        rev.whileTrue(Rev(GeneralConstants.flywheelShootSpeed))
-            .onFalse(Rev(GeneralConstants.flywheelIdleSpeed))
+        rev.whileTrue(SetFlywheel(GeneralConstants.flywheelShootSpeed))
+            .onFalse(SetFlywheel(GeneralConstants.flywheelIdleSpeed))
 
         shoot.whileTrue(Shoot())
 

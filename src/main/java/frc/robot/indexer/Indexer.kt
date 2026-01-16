@@ -5,31 +5,34 @@ import com.revrobotics.spark.SparkLowLevel
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.revrobotics.spark.SparkMax
 import com.revrobotics.spark.config.SparkMaxConfig
+import frc.robot.GeneralConstants
 import frc.robot.IndexerConstants
 
 object Indexer : SubsystemBase() {
 
-    private val flywheelMotor = SparkMax(IndexerConstants.FLYWHEEL_MOTOR_ID, SparkLowLevel.MotorType.kBrushless)
-    private val rollerMotor = WPI_TalonSRX(IndexerConstants.ROLLER_MOTOR_ID)
+    private val flintakeMotor = SparkMax(IndexerConstants.FLINTAKE_MOTOR_ID, SparkLowLevel.MotorType.kBrushless)
+    private val feederMotor = WPI_TalonSRX(IndexerConstants.FEEDER_MOTOR_ID)
 
-    private val flywheelMotorConfig = SparkMaxConfig()
+    private val flintakeMotorConfig = SparkMaxConfig()
 
     init{
-        flywheelMotorConfig.inverted(IndexerConstants.FLYWHEEL_MOTOR_INVERTED)
-        flywheelMotorConfig.smartCurrentLimit(IndexerConstants.FLYWHEEL_MOTOR_CURRENT_LIMIT)
+        flintakeMotorConfig.inverted(IndexerConstants.FLINTAKE_MOTOR_INVERTED)
+        flintakeMotorConfig.smartCurrentLimit(IndexerConstants.FLINTAKE_MOTOR_CURRENT_LIMIT)
 
-        rollerMotor.inverted = IndexerConstants.ROLLER_MOTOR_INVERTED
-        rollerMotor.enableCurrentLimit(true)
+        feederMotor.inverted = IndexerConstants.FEEDER_MOTOR_INVERTED
+        feederMotor.enableCurrentLimit(true)
+
+        defaultCommand = SetFlywheel(GeneralConstants.flywheelIdleSpeed)
     }
 
-    fun setFlywheel(voltage: Double) { flywheelMotor.setVoltage(voltage) }
+    fun setFlintakeVoltage(voltage: Double) { flintakeMotor.setVoltage(voltage) }
 
-    fun getFlywheelRPM(): Double { return flywheelMotor.encoder.velocity }
+    fun getFlywheelSpeed(): Double { return flintakeMotor.encoder.velocity * IndexerConstants.FLYWHEEL_GEAR_RATIO}
 
-    fun setRollerVoltage(voltage: Double) { rollerMotor.setVoltage(voltage) }
+    fun setFeederVoltage(voltage: Double) { feederMotor.setVoltage(voltage) }
 
-    fun stopFlywheel(){ flywheelMotor.stopMotor() }
+    fun stopFlintake(){ flintakeMotor.stopMotor() }
 
-    fun stopRoller(){ rollerMotor.stopMotor() }
+    fun stopFeeder(){ feederMotor.stopMotor() }
 
 }
