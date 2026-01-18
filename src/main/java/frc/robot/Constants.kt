@@ -16,10 +16,10 @@ object GeneralConstants {
 
 object IndexerConstants {
 
-    const val FLINTAKE_MOTOR_ID = -1
-    const val FEEDER_MOTOR_ID = -1
+    const val FLINTAKE_MOTOR_ID = 18
+    const val FEEDER_MOTOR_ID = 3
 
-    const val FLYWHEEL_GEAR_RATIO = 2.0 // This is if the flywheel spins twice as past as the motor
+    const val FLYWHEEL_GEAR_RATIO = 1.0 // This is if the flywheel spins twice as past as the motor
 
     const val FLINTAKE_MOTOR_INVERTED = false
     const val FEEDER_MOTOR_INVERTED = false
@@ -43,10 +43,10 @@ object IndexerConstants {
 
 object DrivetrainConstants {
 
-    const val LEFT_LEADER_ID = -1
-    const val RIGHT_LEADER_ID = -1
-    const val LEFT_FOLLOWER_ID = -1
-    const val RIGHT_FOLLOWER_ID = -1
+    const val LEFT_LEADER_ID = 5
+    const val RIGHT_LEADER_ID = 11
+    const val LEFT_FOLLOWER_ID = 12
+    const val RIGHT_FOLLOWER_ID = 7
 
 
     const val LEFT_LEADER_INVERTED = false // These are random, I have a 50/50 chance of being right lol
