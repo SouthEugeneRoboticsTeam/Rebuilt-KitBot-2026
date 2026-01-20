@@ -7,7 +7,6 @@ import edu.wpi.first.wpilibj.TimedRobot
 import edu.wpi.first.wpilibj.util.WPILibVersion
 import edu.wpi.first.wpilibj2.command.CommandScheduler
 import frc.robot.drivetrain.Drivetrain
-import frc.robot.indexer.Indexer
 
 /**
  * The functions in this object (which basically functions as a singleton class) are called automatically

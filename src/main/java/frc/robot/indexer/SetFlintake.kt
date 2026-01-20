@@ -1,24 +1,22 @@
 package frc.robot.indexer
 
 import edu.wpi.first.math.controller.BangBangController
+import edu.wpi.first.math.controller.PIDController
 import edu.wpi.first.wpilibj2.command.Command
+import frc.robot.FlintakeConstants
 import frc.robot.IndexerConstants
-import frc.robot.indexer.Indexer
 
 class SetFlintake (private val rpm: Double) : Command() {
-    private val indexer = Indexer
-
-    private val bbController = BangBangController(IndexerConstants.BB_TOLERANCE)
+    private val bbController = BangBangController(FlintakeConstants.BB_TOLERANCE)
 
     init {
-        // each subsystem used by the command must be passed into the addRequirements() method
-        addRequirements(indexer)
+        addRequirements(Flintake)
     }
 
     override fun initialize() {}
 
     override fun execute() {
-        Indexer.setFlintakeVoltage(bbController.calculate(Indexer.getFlywheelSpeed(), rpm))
+        Flintake.setFlintakeVoltage(bbController.calculate(Flintake.getFlintakeSpeed(), rpm))
     }
 
     override fun isFinished(): Boolean {
@@ -27,6 +25,6 @@ class SetFlintake (private val rpm: Double) : Command() {
     }
 
     override fun end(interrupted: Boolean) {
-        Indexer.stopFlintake()
+        Flintake.stopFlintake()
     }
 }

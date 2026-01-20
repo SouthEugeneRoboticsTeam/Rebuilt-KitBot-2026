@@ -1,19 +1,25 @@
 package frc.robot.indexer
 
 import edu.wpi.first.wpilibj2.command.Command
-import frc.robot.IndexerConstants
+import frc.robot.FeederConstants
+import frc.robot.FlintakeConstants
 
 class Intake : Command() {
-
-    init { addRequirements(Indexer) }
-
-    override fun initialize() {
-        Indexer.setFlintakeVoltage(4.0)
+    init {
+        addRequirements(Feeder, Flintake)
     }
 
-    override fun isFinished(): Boolean { return false }
+    override fun initialize() {
+        Flintake.setFlintakeSpeed(FlintakeConstants.FLINTAKE_INTAKE_SPEED)
+        Feeder.setFeederSpeed(FeederConstants.FEEDER_INTAKE_SPEED)
+    }
+
+    override fun isFinished(): Boolean {
+        return false
+    }
 
     override fun end(interrupted: Boolean) {
-        Indexer.stopFlintake()
+        Feeder.stopFeeder()
+        Flintake.setFlintakeSpeed(FlintakeConstants.FLINTAKE_IDLE_SPEED)
     }
 }
