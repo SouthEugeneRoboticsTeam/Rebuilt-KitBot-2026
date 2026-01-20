@@ -8,7 +8,7 @@ class Intake : Command() {
     init { addRequirements(Indexer) }
 
     override fun initialize() {
-        Indexer.setFlintakeVoltage(IndexerConstants.FLINTAKE_INTAKE_VOLTAGE)
+        Indexer.setFlintakeVoltage(4.0)
     }
 
     override fun isFinished(): Boolean { return false }

@@ -8,7 +8,7 @@ class Drive : Command() {
     init { addRequirements(Drivetrain) }
 
     override fun execute() {
-        Drivetrain.drivetrain.arcadeDrive(Input.leftStickY(), Input.rightStickX())
+        Drivetrain.drivetrain.tankDrive(Input.leftStickY(), Input.rightStickY())
     }
 
     override fun isFinished(): Boolean { return false }

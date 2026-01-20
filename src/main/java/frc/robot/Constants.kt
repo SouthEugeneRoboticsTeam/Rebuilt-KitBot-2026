@@ -7,7 +7,7 @@ object GeneralConstants {
     var turnSpeed = 0.8 // idk
 
     var flywheelShootSpeed = 2000.0 //Guess
-    var flywheelIdleSpeed = 0.0 // Idle at 0 unless it is better to keep idled?
+    var flintakeIdle = 50.0
     var flywheelReverseSpeed = -500.0
 
     const val CONTROLLER_PORT = 0
@@ -24,21 +24,15 @@ object IndexerConstants {
     const val FLINTAKE_MOTOR_INVERTED = false
     const val FEEDER_MOTOR_INVERTED = false
 
-    const val FLINTAKE_MOTOR_CURRENT_LIMIT = 30
+    const val FLINTAKE_MOTOR_CURRENT_LIMIT = 50
     const val FEEDER_MOTOR_CURRENT_LIMIT = 30
 
-    const val FLINTAKE_P = 0.0
-    const val FLINTAKE_I = 0.0
-    const val FLINTAKE_D = 0.0
+    const val BB_TOLERANCE = 10.0
 
-    const val FLINTAKE_KS = 0.0
-    const val FLINTAKE_KV = 0.0
-    const val FLINTAKE_KA = 0.0
-
-    const val FLINTAKE_INTAKE_VOLTAGE = 10.0
+    const val FLINTAKE_INTAKE_SPEED = 0.001
     const val FLINTAKE_OUTTAKE_VOLTAGE = -12.0
 
-    const val FEEDER_SHOOT_VOLTAGE = 9.0
+    const val FEEDER_SHOOT_VOLTAGE = 10.0
 }
 
 object DrivetrainConstants {
@@ -49,10 +43,10 @@ object DrivetrainConstants {
     const val RIGHT_FOLLOWER_ID = 7
 
 
-    const val LEFT_LEADER_INVERTED = false // These are random, I have a 50/50 chance of being right lol
-    const val RIGHT_LEADER_INVERTED = true
-    const val LEFT_FOLLOWER_INVERTED = false
-    const val RIGHT_FOLLOWER_INVERTED = true
+    const val LEFT_LEADER_INVERTED = true //
+    const val RIGHT_LEADER_INVERTED = false
+    const val LEFT_FOLLOWER_INVERTED = true
+    const val RIGHT_FOLLOWER_INVERTED = false
 
 }
 
