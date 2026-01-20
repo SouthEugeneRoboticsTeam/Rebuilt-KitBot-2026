@@ -4,7 +4,6 @@ import edu.wpi.first.math.controller.BangBangController
 import edu.wpi.first.math.controller.PIDController
 import edu.wpi.first.wpilibj2.command.Command
 import frc.robot.FlintakeConstants
-import frc.robot.IndexerConstants
 
 class SetFlintake (private val rpm: Double) : Command() {
     private val bbController = BangBangController(FlintakeConstants.BB_TOLERANCE)

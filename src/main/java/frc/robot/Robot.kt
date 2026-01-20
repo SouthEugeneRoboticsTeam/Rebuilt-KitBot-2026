@@ -7,6 +7,8 @@ import edu.wpi.first.wpilibj.TimedRobot
 import edu.wpi.first.wpilibj.util.WPILibVersion
 import edu.wpi.first.wpilibj2.command.CommandScheduler
 import frc.robot.drivetrain.Drivetrain
+import frc.robot.indexer.Feeder
+import frc.robot.indexer.Flintake
 
 /**
  * The functions in this object (which basically functions as a singleton class) are called automatically
@@ -41,7 +43,8 @@ object Robot : TimedRobot()
         // button bindings, and put our autonomous chooser on the dashboard.
         RobotContainer
         Drivetrain
-        Indexer
+        Feeder
+        Flintake
     }
 
     /**

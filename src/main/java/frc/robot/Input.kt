@@ -18,8 +18,8 @@ object Input {
 
         intake.whileTrue(Intake())
 
-        rev.whileTrue(SetFlintake(GeneralConstants.flywheelShootSpeed))
-            .onFalse(SetFlintake(GeneralConstants.flintakeIdle))
+        rev.whileTrue(SetFlintake(FlintakeConstants.flywheelShootSpeed))
+            .onFalse(SetFlintake(FlintakeConstants.flintakeIdleSpeed))
 
         shoot.whileTrue(Shoot())
 

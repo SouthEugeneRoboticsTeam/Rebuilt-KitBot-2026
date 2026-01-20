@@ -19,6 +19,7 @@ object FlintakeConstants {
     const val FLINTAKE_INTAKE_SPEED = -0.5
     const val FLINTAKE_IDLE_SPEED = 0.0
     const val FLINTAKE_OUTTAKE_SPEED = 0.5
+    const val FLINTAKE_SHOOT_SPEED = 0.5
 
     var flywheelShootSpeed = 2000.0 //Guess
     var flintakeIdleSpeed = 50.0
@@ -31,6 +32,8 @@ object FeederConstants {
 
     const val FEEDER_INTAKE_SPEED = -0.5
     const val FEEDER_OUTTAKE_SPEED = 0.5
+
+    const val FEEDER_SHOOT_SPEED = 5.0
 }
 
 object DrivetrainConstants {

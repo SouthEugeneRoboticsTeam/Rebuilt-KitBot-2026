@@ -1,14 +1,16 @@
 package frc.robot.indexer
 
 import edu.wpi.first.wpilibj2.command.Command
-import frc.robot.IndexerConstants
+import frc.robot.FeederConstants
+import frc.robot.FlintakeConstants
 
 class Shoot : Command() {
 
-    init { addRequirements(Indexer) }
+    init { addRequirements(Feeder, Flintake) }
 
     override fun initialize() {
-        Indexer.setFeederVoltage(IndexerConstants.FEEDER_SHOOT_VOLTAGE)
+        Feeder.setFeederSpeed(FeederConstants.FEEDER_SHOOT_SPEED)
+        SetFlintake(FlintakeConstants.FLINTAKE_SHOOT_SPEED)
     }
 
     override fun execute() {}
@@ -16,6 +18,7 @@ class Shoot : Command() {
     override fun isFinished(): Boolean { return false }
 
     override fun end(interrupted: Boolean) {
-        Indexer.stopFeeder()
+        Feeder.stopFeeder()
+        Flintake.stopFlintake()
     }
 }
