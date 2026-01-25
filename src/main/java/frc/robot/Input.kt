@@ -26,7 +26,7 @@ object Input {
 
         intake.whileTrue(Intake())
 
-        rev.whileTrue(SetFlintake(FlintakeConstants.FLINTAKE_REV_RPM))
+        rev.onTrue(SetFlintake(FlintakeConstants.FLINTAKE_REV_RPM))
             .onFalse(SetFlintake(FlintakeConstants.FLINTAKE_IDLE_SPEED))
 
         shoot.whileTrue(Shoot())
@@ -36,7 +36,7 @@ object Input {
     }
 
     fun leftStickY(): Double {
-        return controller.leftY
+        return controller.leftY / 4.0 // 1/4 SPEED! too fast for rowing room lol
     }
 
     fun rightStickX(): Double {

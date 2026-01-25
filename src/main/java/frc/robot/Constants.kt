@@ -12,15 +12,17 @@ object FlintakeConstants {
 
     const val FLINTAKE_MOTOR_ID = 18
 
-    const val FLINTAKE_MOTOR_CURRENT_LIMIT = 50
+    const val FLINTAKE_MOTOR_CURRENT_LIMIT = 40
 
-    const val FLINTAKE_P = 10.0
+    const val FLINTAKE_BB_TOLERANCE = 1.0
+
+    const val FLINTAKE_P = 20.0
     const val FLINTAKE_I = 0.0
     const val FLINTAKE_D = 0.0
 
-    const val FLINTAKE_INTAKE_SPEED = -0.5
-    const val FLINTAKE_IDLE_SPEED = 0.0
-    const val FLINTAKE_OUTTAKE_SPEED = 0.5
+    const val FLINTAKE_INTAKE_SPEED = -50.0
+    const val FLINTAKE_IDLE_SPEED = 10.0
+    const val FLINTAKE_OUTTAKE_SPEED = 50.0
     const val FLINTAKE_REV_RPM = 500.0
 }
 

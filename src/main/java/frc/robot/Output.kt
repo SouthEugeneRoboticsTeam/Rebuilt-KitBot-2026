@@ -14,6 +14,9 @@ object Output : SubsystemBase() {
         values.add(Pair("Flintake Speed") { Flintake.getFlintakeSpeed() })
         values.add(Pair("Feeder Voltage") { Feeder.getFeederVoltage() })
         values.add(Pair("Flintake Current") { Flintake.getFlintakeCurrent() })
+
+        values.add(Pair("Speed") { Input.leftStickY() })
+        values.add(Pair("Turning Speed") { Input.rightStickX() })
         update()
     }
 
