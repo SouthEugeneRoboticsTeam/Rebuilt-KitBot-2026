@@ -34,6 +34,10 @@ object  Flintake : SubsystemBase() {
         return flintakeMotor.encoder.velocity
     }
 
+    fun getFlintakeCurrent(): Double{
+        return flintakeMotor.outputCurrent
+    }
+
     fun stopFlintake(){
         flintakeMotor.stopMotor()
     }

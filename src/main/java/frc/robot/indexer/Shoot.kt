@@ -10,7 +10,6 @@ class Shoot : Command() {
 
     override fun initialize() {
         Feeder.setFeederSpeed(FeederConstants.FEEDER_SHOOT_SPEED)
-        SetFlintake(FlintakeConstants.FLINTAKE_SHOOT_SPEED)
     }
 
     override fun execute() {}
@@ -19,6 +18,5 @@ class Shoot : Command() {
 
     override fun end(interrupted: Boolean) {
         Feeder.stopFeeder()
-        Flintake.stopFlintake()
     }
 }

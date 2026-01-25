@@ -11,8 +11,9 @@ class Drive : Command() {
     override fun execute() {
         Drivetrain.drivetrain.tankDrive(
             (Input.leftStickY() * GeneralConstants.driveSpeed),
-            (Input.rightStickY() * GeneralConstants.driveSpeed)
+            (Input.rightStickX() * GeneralConstants.driveSpeed)
         )
+        Drivetrain.drivetrain.curvatureDrive(Input.leftStickY(), Input.rightStickX(), false)
     }
 
     override fun isFinished(): Boolean {

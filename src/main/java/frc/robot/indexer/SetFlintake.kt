@@ -2,11 +2,16 @@ package frc.robot.indexer
 
 import edu.wpi.first.math.controller.BangBangController
 import edu.wpi.first.math.controller.PIDController
+import edu.wpi.first.math.controller.SimpleMotorFeedforward
 import edu.wpi.first.wpilibj2.command.Command
 import frc.robot.FlintakeConstants
 
 class SetFlintake (private val rpm: Double) : Command() {
-    private val bbController = BangBangController(FlintakeConstants.BB_TOLERANCE)
+    private val pidController = PIDController(
+        FlintakeConstants.FLINTAKE_P,
+        FlintakeConstants.FLINTAKE_I,
+        FlintakeConstants.FLINTAKE_D
+    )
 
     init {
         addRequirements(Flintake)
@@ -15,7 +20,7 @@ class SetFlintake (private val rpm: Double) : Command() {
     override fun initialize() {}
 
     override fun execute() {
-        Flintake.setFlintakeVoltage(bbController.calculate(Flintake.getFlintakeSpeed(), rpm))
+        Flintake.setFlintakeVoltage(pidController.calculate(Flintake.getFlintakeSpeed(), rpm))
     }
 
     override fun isFinished(): Boolean {
