@@ -1,5 +1,6 @@
 package frc.robot.drivetrain
 
+import com.ctre.phoenix.motorcontrol.NeutralMode
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX
 import edu.wpi.first.wpilibj.drive.DifferentialDrive
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -18,6 +19,11 @@ object Drivetrain : SubsystemBase() {
         leftFollower.inverted = DrivetrainConstants.LEFT_FOLLOWER_INVERTED
         rightLeader.inverted = DrivetrainConstants.RIGHT_LEADER_INVERTED
         rightFollower.inverted = DrivetrainConstants.RIGHT_FOLLOWER_INVERTED
+
+        leftLeader.setNeutralMode(NeutralMode.Brake)
+        leftFollower.setNeutralMode(NeutralMode.Brake)
+        rightLeader.setNeutralMode(NeutralMode.Brake)
+        rightFollower.setNeutralMode(NeutralMode.Brake)
 
         leftFollower.follow(leftLeader)
         rightFollower.follow(rightLeader)

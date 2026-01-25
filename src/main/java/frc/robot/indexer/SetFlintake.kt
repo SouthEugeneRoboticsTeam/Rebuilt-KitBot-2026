@@ -7,18 +7,17 @@ import edu.wpi.first.wpilibj2.command.Command
 import frc.robot.FlintakeConstants
 
 class SetFlintake (private val rpm: Double) : Command() {
-    private val bbController = BangBangController(FlintakeConstants.FLINTAKE_BB_TOLERANCE)
+    private val feedForward = SimpleMotorFeedforward(FlintakeConstants.FLINTAKE_KS, FlintakeConstants.FLINTAKE_KV)
 
     init {
         addRequirements(Flintake)
     }
 
     override fun initialize() {
-        Flintake.setFlintakeVoltage(bbController.calculate(Flintake.getFlintakeSpeed(), rpm))
     }
 
     override fun execute() {
-        Flintake.setFlintakeVoltage(bbController.calculate(Flintake.getFlintakeSpeed(), rpm))
+        Flintake.setFlintakeVoltage(feedForward.calculate(rpm))
     }
 
     override fun isFinished(): Boolean {

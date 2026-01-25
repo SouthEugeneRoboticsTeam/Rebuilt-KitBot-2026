@@ -4,12 +4,14 @@ import edu.wpi.first.wpilibj2.command.Command
 import frc.robot.FeederConstants
 import frc.robot.FlintakeConstants
 
-class Shoot : Command() {
+class SetFeeder(private val speed: Double) : Command() {
 
-    init { addRequirements(Feeder, Flintake) }
+    init {
+        addRequirements(Feeder)
+    }
 
     override fun initialize() {
-        Feeder.setFeederSpeed(FeederConstants.FEEDER_SHOOT_SPEED)
+        Feeder.setFeederSpeed(speed)
     }
 
     override fun execute() {}

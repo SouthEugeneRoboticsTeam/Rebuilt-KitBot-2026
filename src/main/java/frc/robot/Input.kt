@@ -1,10 +1,8 @@
 package frc.robot
 
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController
-import frc.robot.indexer.Intake
-import frc.robot.indexer.Outtake
+import frc.robot.indexer.SetFeeder
 import frc.robot.indexer.SetFlintake
-import frc.robot.indexer.Shoot
 
 object Input {
     private val controller = CommandXboxController(GeneralConstants.CONTROLLER_PORT)
@@ -21,22 +19,32 @@ object Input {
     private val rev = controller.y()
     private val shoot = controller.rightBumper()
     private val outtake = controller.x()
+    private val turnMode = controller.a()
 
     init {
 
-        intake.whileTrue(Intake())
+        intake
+            .whileTrue(
+                SetFlintake(FlintakeConstants.FLINTAKE_INTAKE_SPEED)
+                    .alongWith(SetFeeder(FeederConstants.FEEDER_INTAKE_SPEED))
+        )
 
-        rev.onTrue(SetFlintake(FlintakeConstants.FLINTAKE_REV_RPM))
+        rev
+            .whileTrue(SetFlintake(FlintakeConstants.FLINTAKE_REV_RPM))
             .onFalse(SetFlintake(FlintakeConstants.FLINTAKE_IDLE_SPEED))
 
-        shoot.whileTrue(Shoot())
+        shoot
+            .whileTrue(SetFeeder(FeederConstants.FEEDER_SHOOT_SPEED))
+            .onFalse(SetFeeder(0.0))
 
-        outtake.whileTrue(Outtake())
+        outtake
+            .whileTrue(SetFlintake(FlintakeConstants.FLINTAKE_OUTTAKE_SPEED)
+                .alongWith(SetFeeder(FeederConstants.FEEDER_OUTTAKE_SPEED)))
 
     }
 
     fun leftStickY(): Double {
-        return controller.leftY / 4.0 // 1/4 SPEED! too fast for rowing room lol
+        return controller.leftY / 2.0 // 1/4 SPEED! too fast for rowing room lol
     }
 
     fun rightStickX(): Double {
@@ -44,6 +52,6 @@ object Input {
     }
 
     fun getTurnMode(): Boolean {
-        return controller.a().asBoolean
+        return turnMode.asBoolean
     }
 }

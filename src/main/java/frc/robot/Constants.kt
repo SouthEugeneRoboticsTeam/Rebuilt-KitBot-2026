@@ -14,16 +14,13 @@ object FlintakeConstants {
 
     const val FLINTAKE_MOTOR_CURRENT_LIMIT = 40
 
-    const val FLINTAKE_BB_TOLERANCE = 1.0
+    const val FLINTAKE_KS = 0.0
+    const val FLINTAKE_KV = 0.0025
 
-    const val FLINTAKE_P = 20.0
-    const val FLINTAKE_I = 0.0
-    const val FLINTAKE_D = 0.0
-
-    const val FLINTAKE_INTAKE_SPEED = -50.0
-    const val FLINTAKE_IDLE_SPEED = 10.0
-    const val FLINTAKE_OUTTAKE_SPEED = 50.0
-    const val FLINTAKE_REV_RPM = 500.0
+    const val FLINTAKE_INTAKE_SPEED = 1500.0
+    const val FLINTAKE_IDLE_SPEED = 0.0
+    const val FLINTAKE_OUTTAKE_SPEED = -1000.0
+    const val FLINTAKE_REV_RPM = 3250.0
 }
 
 object FeederConstants {
@@ -31,10 +28,9 @@ object FeederConstants {
 
     const val FEEDER_MOTOR_INVERTED = false
 
-    const val FEEDER_INTAKE_SPEED = -0.5
-    const val FEEDER_OUTTAKE_SPEED = 0.5
-
-    const val FEEDER_SHOOT_SPEED = -0.5
+    const val FEEDER_INTAKE_SPEED = 1.0
+    const val FEEDER_OUTTAKE_SPEED = -1.0
+    const val FEEDER_SHOOT_SPEED = -1.0
 
 }
 
