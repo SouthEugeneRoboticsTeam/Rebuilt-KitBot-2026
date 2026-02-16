@@ -17,10 +17,10 @@ object FlintakeConstants {
     const val FLINTAKE_KS = 0.0
     const val FLINTAKE_KV = 0.0025
 
-    const val FLINTAKE_INTAKE_SPEED = 1500.0
+    const val FLINTAKE_INTAKE_SPEED = -1500.0
     const val FLINTAKE_IDLE_SPEED = 0.0
-    const val FLINTAKE_OUTTAKE_SPEED = -1000.0
-    const val FLINTAKE_REV_RPM = 3250.0
+    const val FLINTAKE_OUTTAKE_SPEED = 1000.0
+    const val FLINTAKE_REV_RPM = -3500.0
 }
 
 object FeederConstants {

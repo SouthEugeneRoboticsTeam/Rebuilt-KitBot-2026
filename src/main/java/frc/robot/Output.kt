@@ -1,6 +1,5 @@
 package frc.robot
 
-import edu.wpi.first.wpilibj.smartdashboard.Field2d
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard
 import edu.wpi.first.wpilibj2.command.SubsystemBase
 import frc.robot.indexer.Feeder
@@ -16,7 +15,7 @@ object Output : SubsystemBase() {
         values.add(Pair("Flintake Current") { Flintake.getFlintakeCurrent() })
 
         values.add(Pair("Speed") { Input.leftStickY() })
-        values.add(Pair("Turning Speed") { Input.rightStickX() })
+        values.add(Pair("Turning Speed") { Input.rightStickY() })
         update()
     }
 

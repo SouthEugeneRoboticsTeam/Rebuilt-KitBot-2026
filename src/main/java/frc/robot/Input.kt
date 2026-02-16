@@ -16,10 +16,9 @@ object Input {
 
 
     private val intake = controller.leftBumper()
-    private val rev = controller.y()
+    private val rev = controller.rightTrigger()
     private val shoot = controller.rightBumper()
-    private val outtake = controller.x()
-    private val turnMode = controller.a()
+    private val outtake = controller.leftTrigger()
 
     init {
 
@@ -44,14 +43,10 @@ object Input {
     }
 
     fun leftStickY(): Double {
-        return controller.leftY / 2.0 // 1/4 SPEED! too fast for rowing room lol
+        return controller.leftY
     }
 
-    fun rightStickX(): Double {
-        return controller.rightX
-    }
-
-    fun getTurnMode(): Boolean {
-        return turnMode.asBoolean
+    fun rightStickY(): Double {
+        return controller.rightY
     }
 }

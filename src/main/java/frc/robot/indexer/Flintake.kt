@@ -4,6 +4,7 @@ import com.revrobotics.spark.SparkLowLevel
 import com.revrobotics.spark.SparkMax
 import com.revrobotics.spark.config.SparkBaseConfig
 import com.revrobotics.spark.config.SparkMaxConfig
+import edu.wpi.first.wpilibj2.command.Commands
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.FlintakeConstants
 import frc.robot.GeneralConstants
@@ -19,7 +20,11 @@ object  Flintake : SubsystemBase() {
         flintakeMotorConfig.idleMode(SparkBaseConfig.IdleMode.kCoast)
         flintakeMotorConfig.apply(flintakeMotorConfig)
 
-        defaultCommand = SetFlintake(FlintakeConstants.FLINTAKE_IDLE_SPEED)
+        defaultCommand = SetFlintake(FlintakeConstants.FLINTAKE_INTAKE_SPEED)
+    }
+
+    override fun periodic() {
+        //println(flintakeMotor.appliedOutput)
     }
 
     fun setFlintakeVoltage(voltage: Double) {

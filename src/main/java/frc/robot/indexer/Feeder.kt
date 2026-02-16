@@ -12,6 +12,7 @@ object Feeder : SubsystemBase() {
 
     init {
         feederMotor.inverted = FeederConstants.FEEDER_MOTOR_INVERTED
+        defaultCommand = runOnce { setFeederSpeed(FeederConstants.FEEDER_INTAKE_SPEED) }
     }
 
     fun setFeederVoltage(voltage: Double) {
